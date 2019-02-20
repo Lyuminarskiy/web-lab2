@@ -8,10 +8,20 @@ const data = require("./data.js");
  * @param response Ответ сервера.
  */
 function listener(request, response) {
-  // Выводим в консоль сервера информацию о текущем запросе.
+  // Вывести в консоль сервера информацию о текущем запросе.
   console.log(`${Date()} | ${request.method} | ${request.url}`);
   
   // Поместите сюда обработку запроса клиента.
+  if(request.url === "...") {
+    /* ... */
+  }
+  else if(request.url === "...") {
+    /* ... */
+  }
+  else {
+    response.statusCode = 404;
+    response.end("...");
+  }
 }
 
 let server = http.createServer(listener);
