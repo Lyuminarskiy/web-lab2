@@ -1,5 +1,12 @@
 const fs = require("fs");
 
+// Синхронно загружаем данные из файлов JSON при импорте модуля.
+const posts = require("../data/posts.json");
+const comments = require("../data/comments.json");
+const users = require("../data/users.json");
+const categories = require("../data/categories.json");
+const tags = require("../data/tags.json");
+
 // Реализуйте все приведённые ниже методы.
 module.exports = {
   /**
@@ -9,14 +16,14 @@ module.exports = {
    * @return {object} Пост.
    */
   getPost(id) { /* ... */ },
-  
+
   /**
    * Возвращает все посты.
    *
    * @return {array} Посты.
    */
   getPosts() { /* ... */ },
-  
+
   /**
    * Возвращает комментарий по его идентификатору.
    *
@@ -24,7 +31,7 @@ module.exports = {
    * @return {object} Комментарий.
    */
   getComment(id) { /* ... */ },
-  
+
   /**
    * Возвращает все комментарии к посту по его идентификатору.
    *
@@ -32,14 +39,14 @@ module.exports = {
    * @return {array} Комментарии к посту.
    */
   getPostComments(id) { /* ... */ },
-  
+
   /**
    * Возвращает все комментарии.
    *
    * @return {array} Комментарии.
    */
   getComments() { /* ... */ },
-  
+
   /**
    * Возвращает пользователя по его идентификатору.
    *
@@ -47,7 +54,7 @@ module.exports = {
    * @return {object} Пользователь.
    */
   getUser(id) { /* ... */ },
-  
+
   /**
    * Возвращает все посты пользователя по его идентификатору.
    *
@@ -55,7 +62,7 @@ module.exports = {
    * @return {array} Посты пользователя.
    */
   getUserPosts(id) { /* ... */ },
-  
+
   /**
    * Возвращает все комментарии пользователя по его идентификатору.
    *
@@ -63,14 +70,14 @@ module.exports = {
    * @return {array} Комментарии пользователя.
    */
   getUserComments(id) { /* ... */ },
-  
+
   /**
    * Возвращает всех пользователей.
    *
    * @return {array} Пользователи.
    */
   getUsers() { /* ... */ },
-  
+
   /**
    * Возвращает категорию по её идентификатору.
    *
@@ -78,7 +85,7 @@ module.exports = {
    * @return {object} Категория.
    */
   getCategory(id) { /* ... */ },
-  
+
   /**
    * Возвращает все посты в категории по её идентификатору.
    *
@@ -86,14 +93,14 @@ module.exports = {
    * @return {array} Посты в категории.
    */
   getCategoryPosts(id) { /* ... */ },
-  
+
   /**
    * Возвращает все категории.
    *
    * @return {array} Категории.
    */
   getCategories() { /* ... */ },
-  
+
   /**
    * Возвращает тэг по его идентификатору.
    *
@@ -101,7 +108,7 @@ module.exports = {
    * @return {object} Тэг.
    */
   getTag(id) { /* ... */ },
-  
+
   /**
    * Возвращает все посты по тегу по его идентификатору.
    *
@@ -109,7 +116,7 @@ module.exports = {
    * @return {array} Посты по тэгу.
    */
   getTagPosts(id) { /* ... */ },
-  
+
   /**
    * Возвращает все тэги.
    *

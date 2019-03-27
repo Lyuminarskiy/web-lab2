@@ -12,10 +12,10 @@ function listener(request, response) {
   console.log(`${Date()} | ${request.method} ${request.url}`);
 
   // Поместите сюда обработку запроса клиента.
-  if(request.url === "...") {
+  if (request.url === "...") {
     /* ... */
   }
-  else if(request.url === "...") {
+  else if (request.url === "...") {
     /* ... */
   }
   else {
@@ -24,10 +24,17 @@ function listener(request, response) {
   }
 }
 
-// Получаем номер порта через параметр командной строки.
-// Выбираем 80 порт, если параметр не был указан.
-const PORT = parseInt(process.argv[2]) || 80;
+// Порт по умолчанию.
+const DEFAULT_PORT = 80;
 
-const server = http
+// Номер параметра командной строки со значением порта.
+const PORT_PARAMETER_NUMBER = 2;
+
+// Получаем номер порта через параметр командной строки.
+// Если параметр не был указан, то выбираем порт по умолчанию.
+const PORT = parseInt(process.argv[PORT_PARAMETER_NUMBER]) || DEFAULT_PORT;
+
+http
   .createServer(listener)
-  .listen(PORT, () => console.log(`Сервер начал прослушивание на порту ${PORT}`));
+  .listen(30000,
+    () => console.log(`Сервер начал прослушивание на порту ${PORT}`));
