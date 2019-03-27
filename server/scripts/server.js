@@ -10,7 +10,7 @@ const data = require("./data.js");
 function listener(request, response) {
   // Вывести в консоль сервера информацию о текущем запросе.
   console.log(`${Date()} | ${request.method} | ${request.url}`);
-  
+
   // Поместите сюда обработку запроса клиента.
   if(request.url === "...") {
     /* ... */
@@ -24,5 +24,10 @@ function listener(request, response) {
   }
 }
 
-let server = http.createServer(listener);
-server.listen(80);
+// Получаем номер порта через параметр командной строки.
+// Выбираем 80 порт, если параметр не был указан.
+const PORT = parseInt(process.argv[2]) || 80;
+
+const server = http
+  .createServer(listener)
+  .listen(PORT);
