@@ -36,5 +36,5 @@ const PORT = parseInt(process.argv[PORT_PARAMETER_NUMBER]) || DEFAULT_PORT;
 
 http
   .createServer(listener)
-  .listen(30000,
+  .listen(PORT,
     () => console.log(`Сервер начал прослушивание на порту ${PORT}`));

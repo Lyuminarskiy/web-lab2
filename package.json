@@ -12,8 +12,8 @@
   },
   "scripts": {
     "start": "node server/scripts/server.js 80",
-    "dev:server": "nodemon server/scripts/server.js 80",
-    "dev:client": "browser-sync start --proxy 'localhost:80' --port 8080 --files 'client' --no-notify --no-ui"
+    "dev:server": "nodemon server/scripts/server.js 30000",
+    "dev:client": "browser-sync start --proxy localhost:30000 --port 30001 --files client --no-notify --no-ui"
   },
   "devDependencies": {
     "browser-sync": "^2.26.3",
