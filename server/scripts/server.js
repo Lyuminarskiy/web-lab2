@@ -9,7 +9,7 @@ const data = require("./data.js");
  */
 function listener(request, response) {
   // Вывести в консоль сервера информацию о текущем запросе.
-  console.log(`${Date()} | ${request.method} | ${request.url}`);
+  console.log(`${Date()} | ${request.method} ${request.url}`);
 
   // Поместите сюда обработку запроса клиента.
   if(request.url === "...") {
@@ -30,4 +30,4 @@ const PORT = parseInt(process.argv[2]) || 80;
 
 const server = http
   .createServer(listener)
-  .listen(PORT);
+  .listen(PORT, () => console.log(`Сервер начал прослушивание на порту ${PORT}`));
