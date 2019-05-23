@@ -1,3 +1,5 @@
 @charset "UTF-8";
 
-:root {}
+body {
+  margin: 0;
+}
