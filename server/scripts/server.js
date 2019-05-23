@@ -7,20 +7,29 @@ const data = require("./data.js");
  * @param request Запрос клиента.
  * @param response Ответ сервера.
  */
-function listener(request, response) {
+function listener({ method, url }, response) {
   // Вывести в консоль сервера информацию о текущем запросе.
-  console.log(`${Date()} | ${request.method} ${request.url}`);
+  console.log(`${Date()} | ${method} ${url}`);
 
-  // Поместите сюда обработку запроса клиента.
-  if (request.url === "...") {
-    /* ... */
+  // Создаём регулярное выражение для проверки адреса страницы поста.
+  const postUrlRegExp = /^\/post\/(?<postId>\d+)$/;
+
+  if (url === "/" || url === "/index.html" ) {
+    // Реализуйте обработку запроса главной страницы.
   }
-  else if (request.url === "...") {
-    /* ... */
+  else if (postUrlRegExp.test(url)) {
+    // Получаем идентификатор поста из строки адреса.
+    const postId = parseInt(postUrlRegExp.exec(url).groups.postId);
+
+    // Получаем пост по его идентификатору.
+    const post = data.posts.byId(postId);
+
+    // Реализуйте обработку запроса страницы поста.
   }
   else {
+    // Обработка неизвестных адресов.
     response.statusCode = 404;
-    response.end("...");
+    response.end();
   }
 }
 
