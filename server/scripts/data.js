@@ -164,14 +164,14 @@ module.exports = {
      * @param {number} id - Идентификатор тэга.
      * @return {object} Тэг.
      */
-    byId(id) { /* ... */ },
+    byId: (id) => tags.find(tag => tag.id === id),
 
     /**
-     * Возвращает все посты по тегу по его идентификатору.
+     * Возвращает все посты с тегом по его идентификатору.
      *
      * @param {number} id - Идентификатор тэга.
      * @return {array} Посты по тэгу.
      */
-    posts(id) { /* ... */ },
+    posts: (id) => posts.filter(post => post.tags.includes(id)),
   }
 };
